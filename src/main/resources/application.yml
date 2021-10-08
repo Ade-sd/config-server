@@ -1,9 +1,32 @@
 server:
   port: 8888
 
+# Spring Configs
+
+
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/Ade-sd/nars-configs.git
+      #    repos:
+      #      development:
+      #        pattern:
+      #          - '*/development'
+      #          - '*/staging'
+      #        uri: https://github.com/development/config-repo
+      #      staging:
+      #        pattern:
+      #          - '*/qa'
+      #          - '*/production'
+      #        uri: https://github.com/staging/config-repo
+
+# Eureka Configs
+
 eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
-    healthcheck:
-      enabled: true
